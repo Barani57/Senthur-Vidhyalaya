@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Senthur Vidyalaya Matriculation School">
   <meta property="og:description" content="Recognized by Government of Tamil Nadu. Run by Shri Senthur Educational and Charitable Trust, Pavithram, Karur.">
-  <meta property="og:image" content="images/hero-1-campus.jpg">
+  <meta property="og:image" content="images/Photos/hero-1-campus.png">
   <meta property="og:url" content="https://www.senthurvidyalaya.in/">
 
   <!-- Fonts -->
@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+Tamil:wght@500&family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="images/Photos/hero-1-campus.png" media="(min-width: 768px)">
-  <link rel="preload" as="image" href="images/Photos/hero-1-campus-mob.png" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="images/Photos/hero-1-campus-mobile.png" media="(max-width: 767px)">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Structured data for Google -->
@@ -250,57 +250,43 @@
 
   <main id="main">
 
-    <!-- ============ HERO SLIDER ============ -->
-    <section class="hero" id="hero" aria-roledescription="carousel" aria-label="School photos">
+    <!-- ============ HERO BANNER SLIDER (text is inside the banner images) ============ -->
+    <section class="hero" id="hero" aria-roledescription="carousel" aria-label="School banners">
+      <h1 class="sr-only">Senthur Vidyalaya Matriculation School — Recognized by Government of Tamil Nadu, run by Shri Senthur Educational and Charitable Trust</h1>
+
       <div class="hero__slides">
         <figure class="hero__slide is-active" aria-roledescription="slide" aria-label="1 of 3">
           <picture>
-            <source media="(max-width: 767px)" srcset="images/Photos/hero-1-campus-mob.png">
-            <img src="images/Photos/hero-1-campus.png" alt="Senthur Vidyalaya Matriculation School building, Pavithram" width="1920" height="840" fetchpriority="high">
+            <source media="(max-width: 767px)" srcset="images/Photos/hero-1-campus-mob.png" width="1080" height="1350">
+            <img src="images/Photos/hero-1-campus.png" alt="We Guide, They Lead — Senthur Vidyalaya Matriculation School, Recognized by Government of Tamil Nadu" width="1920" height="700" fetchpriority="high">
           </picture>
         </figure>
-        <figure class="hero__slide" aria-roledescription="slide" aria-label="2 of 3">
+        <figure class="hero__slide" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
           <picture>
-            <source media="(max-width: 767px)" srcset="images/Photos/hero-2-courtyard-mob.png">
-            <img src="images/Photos/hero-2-courtyard.png" alt="School courtyard with trees" width="1920" height="840" loading="lazy">
+            <source media="(max-width: 767px)" srcset="images/Photos/hero-2-courtyard-mob.png" width="1080" height="1350">
+            <img src="images/Photos/hero-2-courtyard.png" alt="Learn with Pleasure, and Achieve in Future — Knowledge, Confidence, Values" width="1920" height="700" loading="lazy">
           </picture>
         </figure>
-        <figure class="hero__slide" aria-roledescription="slide" aria-label="3 of 3">
+        <figure class="hero__slide" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
           <picture>
-            <source media="(max-width: 767px)" srcset="images/Photos/hero-3-culture-mob.png">
-            <img src="images/Photos/hero-3-culture.png" alt="Students performing a classical dance on stage" width="1920" height="840" loading="lazy">
+            <source media="(max-width: 767px)" srcset="images/Photos/hero-3-culture-mob.png" width="1080" height="1350">
+            <img src="images/Photos/hero-3-culture.png" alt="Quality Education in a caring, disciplined and student-friendly environment — Academics, Sports, Life Skills" width="1920" height="700" loading="lazy">
           </picture>
         </figure>
       </div>
 
-      <div class="hero__shade" aria-hidden="true"></div>
-
-      <div class="container hero__content">
-        <p class="hero__badge"><span class="dot" aria-hidden="true"></span>Recognized by Government of Tamil Nadu</p>
-        <h1 class="hero__title">
-          <span class="hero__line">Senthur Vidyalaya</span>
-          <span class="hero__line hero__line--accent">Matriculation School</span>
-        </h1>
-        <p class="hero__tamil" lang="ta">செந்தூர் வித்யாலயா மெட்ரிகுலேஷன் பள்ளி</p>
-        <p class="hero__trust">Run by Shri Senthur Educational and Charitable Trust</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="about.html">About Us <svg class="icon"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost" href="contact.html">Contact Us</a>
+      <!-- <div class="hero__ui">
+        <div class="hero__dock">
+          <button class="dock-btn" id="heroPrev" aria-label="Previous banner"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
+          <div class="hero__pager">
+              <button class="pager__item is-active" data-slide="0" aria-label="Show banner 1" aria-current="true"><span class="pager__num">01</span><span class="pager__line"><span class="pager__fill"></span></span></button>
+              <button class="pager__item" data-slide="1" aria-label="Show banner 2"><span class="pager__num">02</span><span class="pager__line"><span class="pager__fill"></span></span></button>
+              <button class="pager__item" data-slide="2" aria-label="Show banner 3"><span class="pager__num">03</span><span class="pager__line"><span class="pager__fill"></span></span></button>
+          </div>
+          <button class="dock-btn" id="heroNext" aria-label="Next banner"><svg class="icon"><use href="#i-arrow-right"/></svg></button>
         </div>
-      </div>
-
-      <div class="container hero__controls">
-        <div class="hero__progress">
-          <span class="hero__count"><b id="heroCurrent">01</b> / 03</span>
-          <span class="hero__bar"><span id="heroBar"></span></span>
-        </div>
-        <div class="hero__arrows">
-          <button class="round-btn" id="heroPrev" aria-label="Previous photo"><svg class="icon"><use href="#i-arrow-left"/></svg></button>
-          <button class="round-btn" id="heroNext" aria-label="Next photo"><svg class="icon"><use href="#i-arrow-right"/></svg></button>
-        </div>
-      </div>
-
-      <a class="hero__scroll" href="#welcome" aria-label="Scroll to welcome section"><span class="mouse"><span></span></span>Scroll</a>
+        <a class="hero__scroll" href="#welcome" aria-label="Scroll to welcome section"><span class="mouse"><span></span></span><span class="hero__scroll-text">Scroll</span></a>
+      </div> -->
     </section>
 
     <!-- ============ WELCOME ============ -->
@@ -335,17 +321,94 @@
         </header>
 
         <ul class="hl-grid">
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-book"/></svg></span><h3>Quality and meaningful education</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-user-check"/></svg></span><h3>Individual attention to students</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-shapes"/></svg></span><h3>Activity-based learning</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-monitor"/></svg></span><h3>Technology-enabled education</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-type"/></svg></span><h3>Phonics-based reading</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-message"/></svg></span><h3>Strong communication skills</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-bulb"/></svg></span><h3>Mental ability development</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-sprout"/></svg></span><h3>Life-skills education</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-heart"/></svg></span><h3>Character and value formation</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-trophy"/></svg></span><h3>Sports and extracurricular development</h3></li>
-          <li class="hl-card reveal"><span class="hl-card__icon"><svg class="icon"><use href="#i-cap"/></svg></span><h3>Academic and competitive examination preparation</h3></li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-01.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-book"/></svg></span>
+            </div>
+            <h3>Quality and meaningful education</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-02.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-user-check"/></svg></span>
+            </div>
+            <h3>Individual attention to students</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-03.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-shapes"/></svg></span>
+            </div>
+            <h3>Activity-based learning</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-04.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-monitor"/></svg></span>
+            </div>
+            <h3>Technology-enabled education</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-05.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-type"/></svg></span>
+            </div>
+            <h3>Phonics-based reading</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-06.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-message"/></svg></span>
+            </div>
+            <h3>Strong communication skills</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-07.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-bulb"/></svg></span>
+            </div>
+            <h3>Mental ability development</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-08.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-sprout"/></svg></span>
+            </div>
+            <h3>Life-skills education</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-09.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+            </div>
+            <h3>Character and value formation</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-10.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-trophy"/></svg></span>
+            </div>
+            <h3>Sports and extracurricular development</h3>
+          </li>
+          <li class="hl-card reveal">
+            <div class="hl-card__media">
+              <span class="hl-card__ring" aria-hidden="true"></span>
+              <img src="images/Photos/hl-11.png" alt="" width="600" height="600" loading="lazy">
+              <span class="hl-card__icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+            </div>
+            <h3>Academic and competitive examination preparation</h3>
+          </li>
         </ul>
       </div>
     </section>
@@ -353,21 +416,23 @@
     <!-- ============ PHOTO GALLERY ============ -->
     <section class="section gallery" id="gallery">
       <div class="container">
-        <header class="section-head section-head--split reveal">
-          <div>
-            <p class="eyebrow">Photo Gallery</p>
-            <h2 class="h2">Life at Senthur Vidyalaya</h2>
-          </div>
-          <a class="btn btn--outline" href="gallery.html#photo-gallery">View Photo Gallery <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+        <header class="section-head section-head--center reveal">
+          <p class="eyebrow eyebrow--center">Photo Gallery</p>
+          <h2 class="h2">Life at Senthur Vidyalaya</h2>
+          <span class="ornament ornament--dark" aria-hidden="true"></span>
         </header>
 
-        <div class="bento">
-          <button class="bento__item bento__item--a reveal" data-index="0"><img src="images/Photos/gallery-1.png" alt="Kindergarten children in Krishna and Radha costumes" width="1200" height="900" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
-          <button class="bento__item bento__item--b reveal" data-index="1"><img src="images/Photos/gallery-3.png" alt="Teachers' Day staff group photo" width="800" height="600" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
-          <button class="bento__item bento__item--c reveal" data-index="2"><img src="images/Photos/gallery-2.png" alt="Independence Day celebration with kindergarten children" width="800" height="600" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
-          <button class="bento__item bento__item--d reveal" data-index="3"><img src="images/Photos/gallery-4.png" alt="Vidyarambham with a family and the Correspondent" width="800" height="600" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
-          <button class="bento__item bento__item--e reveal" data-index="4"><img src="images/Photos/gallery-5.png" alt="Lamp lighting at the school inauguration" width="800" height="600" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
-          <button class="bento__item bento__item--f reveal" data-index="5"><img src="images/Photos/gallery-6.png" alt="Children in traditional Tamil outfits" width="800" height="600" loading="lazy"><span class="bento__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+        <div class="photo-grid">
+          <button class="photo-grid__item reveal" data-index="0"><img src="images/Photos/gallery-1.png" alt="Kindergarten children in Krishna and Radha costumes" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+          <button class="photo-grid__item reveal" data-index="1"><img src="images/Photos/gallery-3.png" alt="Teachers' Day staff group photo" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+          <button class="photo-grid__item reveal" data-index="2"><img src="images/Photos/gallery-2.png" alt="Independence Day celebration with kindergarten children" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+          <button class="photo-grid__item reveal" data-index="3"><img src="images/Photos/gallery-4.png" alt="Vidyarambham with a family and the Correspondent" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+          <button class="photo-grid__item reveal" data-index="4"><img src="images/Photos/gallery-5.png" alt="Lamp lighting at the school inauguration" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+          <button class="photo-grid__item reveal" data-index="5"><img src="images/Photos/gallery-6.png" alt="Children in traditional Tamil outfits" width="800" height="600" loading="lazy"><span class="photo-grid__zoom"><svg class="icon"><use href="#i-expand"/></svg></span></button>
+        </div>
+
+        <div class="gallery__cta reveal">
+          <a class="btn btn--outline" href="gallery.html#photo-gallery">View Photo Gallery <svg class="icon"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
     </section>

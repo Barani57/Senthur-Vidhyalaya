@@ -69,56 +69,79 @@
     closeAllSubs();
   });
 
-  /* ---------- Hero slider ---------- */
-  const hero = $("#hero");
-  const slides = $$(".hero__slide", hero);
-  const bar = $("#heroBar");
-  const current = $("#heroCurrent");
-  const DURATION = 7000;
+  /* ---------- Hero banner slider (numbered pager 01 02 03 with loading line) ---------- */
+  // const hero = $("#hero");
+  // const slides = $$(".hero__slide", hero);
+  // const pages = $$(".pager__item", hero);
+  // const DURATION = 7000;
+  // let index = 0;
+  // let timer = null;
+
+  // function runFill() {
+  //   $$(".pager__fill", hero).forEach((f) => f.classList.remove("is-running"));
+  //   const fill = $(".pager__fill", pages[index]);
+  //   void fill.offsetWidth; // restart the CSS animation
+  //   if (!reduceMotion) fill.classList.add("is-running");
+  // }
+  // function show(i) {
+  //   slides[index].classList.remove("is-active");
+  //   slides[index].setAttribute("aria-hidden", "true");
+  //   pages[index].classList.remove("is-active");
+  //   pages[index].removeAttribute("aria-current");
+  //   index = (i + slides.length) % slides.length;
+  //   slides[index].classList.add("is-active");
+  //   slides[index].removeAttribute("aria-hidden");
+  //   pages[index].classList.add("is-active");
+  //   pages[index].setAttribute("aria-current", "true");
+  //   // load the next banner early so the fade never shows a blank frame
+  //   const next = $("img", slides[(index + 1) % slides.length]);
+  //   if (next) next.loading = "eager";
+  //   runFill();
+  // }
+  // function play() { stop(); if (!reduceMotion) timer = setInterval(() => show(index + 1), DURATION); }
+  // function stop() { clearInterval(timer); timer = null; }
+
+  // $("#heroNext").addEventListener("click", () => { show(index + 1); play(); });
+  // $("#heroPrev").addEventListener("click", () => { show(index - 1); play(); });
+  // pages.forEach((p, i) => p.addEventListener("click", () => { show(i); play(); }));
+  // hero.addEventListener("mouseenter", () => { stop(); hero.classList.add("is-paused"); });
+  // hero.addEventListener("mouseleave", () => { hero.classList.remove("is-paused"); play(); });
+  // document.addEventListener("visibilitychange", () => (document.hidden ? stop() : play()));
+
+  // // swipe on touch screens
+  // let startX = 0;
+  // hero.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  // hero.addEventListener("touchend", (e) => {
+  //   const dx = e.changedTouches[0].clientX - startX;
+  //   if (Math.abs(dx) > 50) { show(index + (dx < 0 ? 1 : -1)); play(); }
+  // });
+
+  // runFill();
+  // play();
+
+    /* ---------- Hero banner slider: auto-plays every 6 s, never stops ---------- */
+  const slides = $$("#hero .hero__slide");
+  const INTERVAL = 6000;
   let index = 0;
-  let timer = null;
 
-  function restartBar() {
-    bar.classList.remove("is-running");
-    void bar.offsetWidth; // restart CSS animation
-    if (!reduceMotion) bar.classList.add("is-running");
-  }
-  function show(i) {
+  function next() {
     slides[index].classList.remove("is-active");
-    index = (i + slides.length) % slides.length;
+    slides[index].setAttribute("aria-hidden", "true");
+    index = (index + 1) % slides.length;
     slides[index].classList.add("is-active");
-    // swap lazy images in early so fades never show a blank frame
-    const img = $("img", slides[(index + 1) % slides.length]);
-    if (img) img.loading = "eager";
-    current.textContent = String(index + 1).padStart(2, "0");
-    restartBar();
+    slides[index].removeAttribute("aria-hidden");
+    // load the following banner early so the fade never shows a blank frame
+    const upcoming = $("img", slides[(index + 1) % slides.length]);
+    if (upcoming) upcoming.loading = "eager";
   }
-  function play() { stop(); if (!reduceMotion) timer = setInterval(() => show(index + 1), DURATION); }
-  function stop() { clearInterval(timer); timer = null; }
-
-  $("#heroNext").addEventListener("click", () => { show(index + 1); play(); });
-  $("#heroPrev").addEventListener("click", () => { show(index - 1); play(); });
-  hero.addEventListener("mouseenter", () => { stop(); hero.classList.add("is-paused"); });
-  hero.addEventListener("mouseleave", () => { hero.classList.remove("is-paused"); play(); });
-  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : play()));
-
-  // swipe on touch screens
-  let startX = 0;
-  hero.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
-  hero.addEventListener("touchend", (e) => {
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 50) { show(index + (dx < 0 ? 1 : -1)); play(); }
-  });
-
-  restartBar();
-  play();
+  if (slides.length > 1) setInterval(next, INTERVAL);
 
   /* ---------- Scroll reveal ---------- */
   if ("IntersectionObserver" in window && !reduceMotion) {
     document.documentElement.classList.add("is-ready");
     // stagger cards inside grids
     $$(".hl-grid .reveal").forEach((el, i) => el.style.setProperty("--d", (i % 4) * 0.08 + "s"));
-    $$(".bento .reveal").forEach((el, i) => el.style.setProperty("--d", i * 0.07 + "s"));
+    $$(".photo-grid .reveal").forEach((el, i) => el.style.setProperty("--d", (i % 3) * 0.08 + "s"));
     $$(".welcome__text.reveal").forEach((el) => el.style.setProperty("--d", ".12s"));
 
     const io = new IntersectionObserver((entries) => {
@@ -130,7 +153,7 @@
   }
 
   /* ---------- Gallery lightbox ---------- */
-  const items = $$(".bento__item");
+  const items = $$(".photo-grid__item");
   const lb = $("#lightbox");
   const lbImg = $("#lbImg");
   const lbCount = $("#lbCount");
@@ -174,4 +197,5 @@
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   });
   $("#year").textContent = new Date().getFullYear();
+  window.addEventListener("load", () => document.documentElement.classList.add("is-loaded"));
 })();
